@@ -8,6 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -17,9 +21,10 @@ body {
 
 header {
   background: #020617;
-  padding: 1.5rem;
+  padding: 1.2rem;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 nav {
@@ -27,12 +32,14 @@ nav {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 nav a {
   color: #94a3b8;
   margin-left: 1rem;
   text-decoration: none;
+  font-weight: 500;
 }
 
 nav a:hover {
@@ -45,24 +52,37 @@ section {
   padding: 4rem 1.5rem;
 }
 
-h1 { font-size: 3rem; }
-h2 { color: #38bdf8; }
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  color: #cbd5f5;
+}
 
 .card {
   background: #020617;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
 img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 2px solid #1e293b;
 }
 
@@ -70,10 +90,11 @@ button {
   background: #38bdf8;
   color: #020617;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -90,94 +111,134 @@ footer {
   background: #020617;
   color: #94a3b8;
 }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* PROJECT CARD */
+.project-card h3 {
+  margin-top: 1rem;
+  color: #e5e7eb;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<nav>
-<strong>Jomel Madrid</strong>
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#documents">Documents</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
+  <nav>
+    <strong>Jomel Madrid</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#documents">Documents</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
-<section>
-<h1>Jomel Madrid</h1>
-<p>Aspiring IT professional specializing in computer security, ethical hacking, and digital forensics.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Jomel Madrid</h1>
+  <p>
+    Aspiring IT professional specializing in computer security,
+    ethical hacking, and digital forensics.
+  </p>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-<h2>About Me</h2>
-<div class="card">
-Motivated IT student with a strong interest in computer security, ethical hacking, and digital forensics.
-</div>
+  <h2>About Me</h2>
+  <div class="card">
+    I am a motivated Information Technology student with a strong interest in
+    cybersecurity, ethical hacking, and digital forensics. I am eager to apply
+    my skills in real-world projects and continuously improve my technical knowledge.
+  </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
-<h2>Skills</h2>
-<div class="grid">
-<div class="card">HTML & CSS</div>
-<div class="card">JavaScript</div>
-<div class="card">Kali Linux</div>
-<div class="card">Git & GitHub</div>
-</div>
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML & CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">Kali Linux</div>
+    <div class="card">Git & GitHub</div>
+    <div class="card">Basic Cybersecurity</div>
+    <div class="card">System Troubleshooting</div>
+  </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-<h2>Projects</h2>
-<div class="grid">
+  <h2>Projects</h2>
 
-<div class="card">
-<img src="images/project1.png">
-<h3>Car Rental Management System (Mobile App)</h3>
-<p>Mobile app for managing car rentals, vehicle tracking, and bookings.</p>
-</div>
+  <div class="grid">
+    <div class="card project-card">
+      <img src="images/project1.png" alt="Mobile App Project">
+      <h3>Car Rental Management System (Mobile App)</h3>
+      <p>
+        A mobile application designed to manage and monitor car rentals,
+        including vehicle tracking, customer management, and booking features.
+      </p>
+    </div>
 
-<div class="card">
-<img src="images/project2.png">
-<h3>Car Rental Management System (Web App)</h3>
-<p>Web-based system built using HTML, CSS, and JavaScript.</p>
-</div>
-
-</div>
+    <div class="card project-card">
+      <img src="images/project2.png" alt="Web App Project">
+      <h3>Car Rental Management System (Web App)</h3>
+      <p>
+        A full-stack web application developed using HTML, CSS, JavaScript, and PHP,
+        featuring booking management and real-time monitoring.
+      </p>
+    </div>
+  </div>
 </section>
 
+<!-- DOCUMENTS -->
 <section id="documents">
-<h2>Resume & Certificates</h2>
+  <h2>Resume & Certificates</h2>
 
-<button onclick="toggleDocs()">View Resume & Certificates</button>
+  <button onclick="toggleDocs()">View Resume & Certificates</button>
 
-<div id="docs" class="hidden">
+  <div id="docs" class="hidden" style="margin-top:2rem;">
 
-<h3>Resume</h3>
-<img src="images/resumePNG.PNG">
+    <h3>Resume</h3>
+    <img src="images/resume.png" alt="Resume">
 
-<h3 style="margin-top:2rem;">Certificates</h3>
-<div class="grid">
-<img src="images/Data2Discovery_Cert-01-15-2026-19꞉19_20260115_192149_155_25.jpg">
-<img src="images/Data2Discovery_Cert-01-15-2026-19꞉19_20260115_192150_074_71.jpg">
-<img src="images/e61553d1-366b-43f9-a167-5b7dde93870a.png">
-<img src="images/tesda.png">
-</div>
+    <h3 style="margin-top:2.5rem;">Certificates</h3>
+    <div class="grid">
+      <img src="images/cert1.jpg" alt="Certificate 1">
+      <img src="images/cert2.jpg" alt="Certificate 2">
+      <img src="images/cert3.jpg" alt="Certificate 3">
+      <img src="images/cert4.jpg" alt="Certificate 4">
+    </div>
 
-</div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer id="contact">
-<p>Email: your.email@gmail.com</p>
-<p>GitHub: github.com/jomelmadrid</p>
+  <p>Email: your.email@gmail.com</p>
+  <p>GitHub: github.com/jomelmadrid</p>
 </footer>
 
 <script>
 function toggleDocs() {
-  document.getElementById("docs").classList.toggle("hidden");
+  const docs = document.getElementById("docs");
+  docs.classList.toggle("hidden");
 }
 </script>
 
