@@ -8,44 +8,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --primary: #2563eb;
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #1f2937;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     header {
-      padding: 2rem;
+      background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
     }
 
     nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
-      max-width: 1000px;
-      margin: auto;
+      align-items: center;
     }
 
     nav a {
-      margin-left: 1rem;
+      margin-left: 1.5rem;
       text-decoration: none;
-      color: #6b7280;
+      color: var(--muted);
+      font-weight: 500;
     }
 
     nav a:hover {
-      color: #2563eb;
+      color: var(--primary);
     }
 
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 4rem 2rem;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
     }
 
@@ -53,18 +70,62 @@
       margin-bottom: 1.5rem;
     }
 
+    p {
+      color: var(--muted);
+      max-width: 750px;
+    }
+
     .card {
-      background: #f9fafb;
+      background: var(--card);
       padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 1rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      margin-bottom: 1.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* BUTTON CARDS */
+    .click-card {
+      cursor: pointer;
+      text-align: center;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .click-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    /* HIDDEN CONTENT */
+    .hidden {
+      display: none;
+    }
+
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .images-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     footer {
-      text-align: center;
-      padding: 2rem;
+      background: #ffffff;
       border-top: 1px solid #e5e7eb;
-      color: #6b7280;
+      text-align: center;
+      padding: 2.5rem;
+      color: var(--muted);
     }
   </style>
 </head>
@@ -76,45 +137,96 @@
     <strong>Jomel Madrid</strong>
     <div>
       <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
 
 <section>
   <h1>Jomel Madrid</h1>
-  <p>Aspiring IT professional passionate about technology and continuous learning.</p>
+  <p>
+    Aspiring IT professional with a strong interest in computer security,
+    ethical hacking, and digital forensics.
+  </p>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
   <p>
-    I am a motivated individual aiming to build a career in information technology,
-    focusing on software development and digital solutions.
+    I am a motivated and dedicated individual aiming to build a career in
+    Information Technology, with a focus on computer security, ethical hacking,
+    and digital forensics. I am passionate about continuous learning and
+    improving my skills in the cybersecurity field.
   </p>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+
+  <div class="grid">
+    <div class="card click-card" onclick="toggleResume()">
+      📄 View Resume
+    </div>
+
+    <div class="card click-card" onclick="toggleCerts()">
+      🏅 View Certificates
+    </div>
+  </div>
+
+  <!-- RESUME -->
+  <div id="resume" class="hidden">
+    <h3>Resume</h3>
+    <div class="images-grid">
+      <img src="resume.jpg" alt="Resume">
+    </div>
+  </div>
+
+  <!-- CERTIFICATES -->
+  <div id="certificates" class="hidden">
+    <h3>Certificates</h3>
+    <div class="images-grid">
+      <img src="cert1.jpg" alt="Certificate 1">
+      <img src="cert2.jpg" alt="Certificate 2">
+      <img src="cert3.jpg" alt="Certificate 3">
+      <img src="cert4.jpg" alt="Certificate 4">
+    </div>
+  </div>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <div class="card">HTML & CSS</div>
-  <div class="card">JavaScript</div>
-  <div class="card">Git & GitHub</div>
+  <div class="grid">
+    <div class="card">HTML & CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">Kali Linux</div>
+    <div class="card">Git & GitHub</div>
+  </div>
 </section>
 
 <section id="education">
   <h2>Education</h2>
   <div class="card">
     <strong>Bachelor of Information Technology</strong><br>
-    2021 – 2025
+    2024 – 2026
   </div>
 </section>
 
-<footer id="contact">
+<footer>
   <p>Email: your.email@gmail.com</p>
-  <p>GitHub: github.com/jomelmadrid</p>
 </footer>
+
+<script>
+  function toggleResume() {
+    document.getElementById("resume").classList.toggle("hidden");
+  }
+
+  function toggleCerts() {
+    document.getElementById("certificates").classList.toggle("hidden");
+  }
+</script>
 
 </body>
 </html>
